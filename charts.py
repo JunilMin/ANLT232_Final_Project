@@ -2,14 +2,14 @@ import altair as alt
 import pandas as pd
 
 
-def _chart_data(df):
+def chart_data(df):
     chart_df = df.copy()
     chart_df["label"] = chart_df["name"].astype(str).str.slice(0, 28)
     return chart_df
 
 
 def rent_bar_chart(df):
-    chart_df = _chart_data(df).dropna(subset=["rent"])
+    chart_df = chart_data(df).dropna(subset=["rent"])
 
     return (
         alt.Chart(chart_df)
@@ -24,7 +24,7 @@ def rent_bar_chart(df):
 
 
 def distance_vs_rent_chart(df):
-    chart_df = _chart_data(df).dropna(subset=["rent", "distance_from_uop_miles"])
+    chart_df = chart_data(df).dropna(subset=["rent", "distance_from_uop_miles"])
 
     if chart_df.empty:
         return None
@@ -43,7 +43,7 @@ def distance_vs_rent_chart(df):
 
 
 def rent_distribution_chart(df):
-    chart_df = _chart_data(df).dropna(subset=["rent"])
+    chart_df = chart_data(df).dropna(subset=["rent"])
 
     return (
         alt.Chart(chart_df)
