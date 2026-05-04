@@ -16,7 +16,7 @@ st.set_page_config(page_title="UOP Stockton Apartment Rent Explorer", layout="wi
 st.title("UOP Stockton Apartment Rent Explorer")
 
 st.write(
-    "This dashboard helps students compare rental listings near the University of the Pacific "
+    "It helps you to compare rental listings near the University of the Pacific "
     "Stockton campus. It uses the RentCast API, calculates distance from UOP, and recommends "
     "apartments based on distance and rent."
 )
@@ -25,7 +25,7 @@ st.header("Project Story")
 
 st.write(
     "Finding housing near campus is not only about rent. Distance, location, and apartment features "
-    "also matter. This dashboard explores affordable and convenient rental options near UOP Stockton."
+    "also matter. You can explore affordable and convenient rental options near UOP Stockton."
 )
 
 if not get_api_key():
