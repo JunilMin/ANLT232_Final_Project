@@ -32,7 +32,6 @@ if not get_api_key():
     st.error("RENTCAST_API_KEY is missing. Add it to your .env file.")
     st.stop()
 
-
 def show_pydeck_map(results_df):
     map_df = build_map_dataframe(results_df).dropna(subset=["latitude", "longitude"])
 
@@ -99,7 +98,6 @@ def show_pydeck_map(results_df):
 
     st.caption("Red point is the UOP Stockton. Blue points are rental listings.")
 
-
 with st.sidebar:
     st.header("Search Options")
 
@@ -146,6 +144,9 @@ try:
             limit=limit,
         )
         raw_df = listings_to_dataframe(listings)
+        # print(raw_df.columns)
+        # print(raw_df.head())
+
 
 except Exception as exc:
     st.error(f"API request failed: {exc}")

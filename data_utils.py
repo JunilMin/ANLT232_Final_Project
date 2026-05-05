@@ -1,12 +1,10 @@
 from math import asin, cos, radians, sin, sqrt
 from typing import Any
-
 import pandas as pd
 
 UOP_LAT = 37.9806
 UOP_LON = -121.3123
 UOP_NAME = "University of the Pacific - Stockton"
-
 
 def haversine_miles(lat1, lon1, lat2, lon2):
     radius_miles = 3958.8
@@ -15,14 +13,12 @@ def haversine_miles(lat1, lon1, lat2, lon2):
     a = sin(dlat / 2) ** 2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon / 2) ** 2
     return radius_miles * 2 * asin(sqrt(a))
 
-
 def first_value(item, keys, default=None):
     for key in keys:
         value = item.get(key)
         if value not in (None, "", []):
             return value
     return default
-
 
 def listings_to_dataframe(listings):
     rows = []
@@ -68,7 +64,6 @@ def listings_to_dataframe(listings):
 
     return df
 
-
 def filter_and_rank_listings(df, max_rent, max_distance, min_bedrooms):
     filtered = df.dropna(subset=["rent"]).copy()
     filtered = filtered[filtered["rent"] <= max_rent]
@@ -80,7 +75,6 @@ def filter_and_rank_listings(df, max_rent, max_distance, min_bedrooms):
     filtered = filtered.sort_values(["distance_from_uop_miles", "rent"], ascending=[True, True], na_position="last")
     filtered.insert(0, "recommendation_rank", range(1, len(filtered) + 1))
     return filtered
-
 
 def build_map_dataframe(df):
     uop_row = pd.DataFrame(

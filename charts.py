@@ -1,12 +1,10 @@
 import altair as alt
 import pandas as pd
 
-
 def chart_data(df):
     chart_df = df.copy()
     chart_df["label"] = chart_df["name"].astype(str).str.slice(0, 28)
     return chart_df
-
 
 def rent_bar_chart(df):
     chart_df = chart_data(df).dropna(subset=["rent"])
@@ -21,7 +19,6 @@ def rent_bar_chart(df):
         )
         .properties(title="Monthly Rent by Listing", height=360)
     )
-
 
 def distance_vs_rent_chart(df):
     chart_df = chart_data(df).dropna(subset=["rent", "distance_from_uop_miles"])
@@ -40,7 +37,6 @@ def distance_vs_rent_chart(df):
         )
         .properties(title="Distance from UOP vs. Rent", height=380)
     )
-
 
 def rent_distribution_chart(df):
     chart_df = chart_data(df).dropna(subset=["rent"])

@@ -9,10 +9,8 @@ load_dotenv()
 
 BASE_URL = "https://api.rentcast.io/v1"
 
-
 def get_api_key():
     return (os.getenv("RENTCAST_API_KEY") or "").strip()
-
 
 def search_rental_listings(city: str = "", state: str = "CA", zip_code: str = "", limit: int = 20):
     params: dict[str, Any] = {"status": "Active", "limit": limit}
