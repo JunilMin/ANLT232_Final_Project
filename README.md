@@ -1,7 +1,10 @@
+## Theme
+- This project helps UOP students find proper housing near UOP stockton campus by good rent price and distance from campus
+
 ## Dataset columns
 - All columns: dict_keys(['id', 'formattedAddress', 'addressLine1', 'addressLine2', 'city', 'state', 'stateFips', 'zipCode', 'county', 'countyFips', 'latitude', 'longitude', 'propertyType', 'bedrooms', 'bathrooms', 'squareFootage', 'status', 'price', 'listingType', 'listedDate', 'removedDate', 'createdDate', 'lastSeenDate', 'daysOnMarket', 'history'])
 
-- Used columns: name, address, city, state, zip, rent, bedrooms, bathrooms, sqft, property_type, latitude, longitude, distance_from_uop_miles, listing_url
+- Columns used: name, address, city, state, zip, rent, bedrooms, bathrooms, sqft, property_type, latitude, longitude, distance_from_uop_miles, listing_url
 
 ## Workflow
 1. Data Collection
@@ -12,12 +15,14 @@
 3. Filtering / Ranking
     - Listings are filtered and ranked based on price range and distance
 4. Visualization / Dashboard
-    - The processed data is visualized using charts and maps with Streamlit
+    - The processed data is visualized using charts and maps using Streamlit
 
 ## Setup
 Create a `.env` file in the project folder
 
-```.env file should look like:
+```bash
+.env file should look like this.
+
 RENTCAST_API_KEY=your_api_key_here
 ```
 
@@ -25,12 +30,10 @@ RENTCAST_API_KEY=your_api_key_here
 
 ```bash
 pip install -r requirements.txt
-
 streamlit run app.py
 ```
 
+- if it doesn't work, try:
 ```bash
-if it doesn't work, try:
-
 python -m streamlit run app.py
 ```
