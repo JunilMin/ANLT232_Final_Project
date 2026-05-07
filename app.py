@@ -266,7 +266,3 @@ with tab4:
         )
     else:
         st.info("Turn on 'Show detailed table' in the sidebar to view the data table.")
-
-st.caption(
-    "Data source: RentCast API. Distances are calculated using UOP Stockton campus coordinates."
-)
