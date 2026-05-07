@@ -16,16 +16,19 @@ st.set_page_config(page_title="UOP Stockton Apartment Rent Explorer", layout="wi
 st.title("UOP Stockton Apartment Rent Explorer")
 
 st.write(
-    "It helps you to compare rental listings near the University of the Pacific "
-    "Stockton campus. It uses the RentCast API, calculates distance from UOP, and recommends "
-    "apartments based on distance and rent."
+    "It helps students explore and compare rental listings near the University "
+    "of the Pacific Stockton campus. Since finding housing near UOP can be challenging, "
+    "this dashboard focuses on distance from campus, rental price, and some apartment features."
+
 )
 
 st.header("Project Story")
 
 st.write(
-    "Finding housing near campus is not only about rent. Distance, location, and apartment features "
-    "also matter. You can explore affordable and convenient rental options near UOP Stockton."
+    "Finding housing near UOP Stockton can be difficult, especially for students who want to live near "
+    "campus while staying within their budget. Because of this, we wanted to explore rental options "
+    "based on distance from UOP, along with rent price and apartment features. This dashboard helps users "
+    "compare affordable and convenient housing options near campus."
 )
 
 if not get_api_key():
